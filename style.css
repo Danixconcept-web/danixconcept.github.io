@@ -1,1 +1,150 @@
+:root {
+  --white: #ffffff;
+  --green: #1ec773;
+  --light-green: #e6fff2;
+  --text: #222;
+  --accent: #1ec773;
+}
 
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  background: var(--white);
+  color: var(--text);
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+header.hero {
+  background: linear-gradient(135deg, var(--white) 70%, var(--light-green) 100%);
+  text-align: center;
+  padding: 4rem 0 2.5rem;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  color: var(--green);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-links img {
+  width: 36px;
+  height: 36px;
+  filter: grayscale(1) brightness(0.6) invert(0.2) sepia(1) hue-rotate(90deg) saturate(2);
+  transition: filter 0.2s;
+}
+
+.social-links a:hover img {
+  filter: none;
+}
+
+.section {
+  padding: 3rem 0 2rem;
+}
+
+.section h2 {
+  color: var(--green);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--light-green);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+  box-shadow: 0 2px 16px 0 rgba(30, 199, 115, 0.03);
+}
+
+.project-thumb {
+  width: 100%;
+  height: 120px;
+  background: var(--green);
+  border-radius: .75rem;
+  margin-bottom: 1rem;
+  opacity: 0.15;
+}
+
+.project-card h3 {
+  margin: 0 0 .5rem 0;
+  color: var(--accent);
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  background: var(--light-green);
+  color: var(--green);
+  border-radius: 14px;
+  padding: .4em 1.1em;
+  font-weight: 500;
+  font-size: 1em;
+  box-shadow: 0 2px 8px 0 rgba(30, 199, 115, 0.06);
+}
+
+.contact p, .contact a {
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.contact a {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+footer {
+  background: var(--light-green);
+  padding: 1.1rem 0;
+  text-align: center;
+  color: var(--green);
+  font-size: .95rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .section {
+    padding: 2rem 0 1.5rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
