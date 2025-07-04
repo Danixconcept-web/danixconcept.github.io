@@ -33,22 +33,25 @@
     <div class="cards">
       <div class="card">
         <h3>Logo Design</h3>
+        <p>Custom logos tailored to brand values and voice, from minimal to expressive styles.</p>
       </div>
       <div class="card">
         <h3>Brand Identity</h3>
+        <p>Complete visual branding system: logo, colors, typography, guidelines and digital assets.</p>
       </div>
       <div class="card">
         <h3>Illustration</h3>
+        <p>Unique hand-crafted visuals and digital art to enhance brand storytelling and engagement.</p>
       </div>
     </div>
   </section>
 
-  <section id="about" class="about container">
+  <section id="about" class="about container fade-in">
     <h2>About Me</h2>
-    <p>I’m a passionate graphic designer crafting impactful visuals & brand stories. My work spans from logos to social media content, focusing on clean aesthetics and functional design.</p>
+    <p>I’m Danixconcept, a creative mind passionate about turning vision into design. With a strong sense of balance, storytelling, and style, I help brands build memorable impressions through visual identity and content design. Whether it's a startup or a personal project, I bring ideas to life with precision and flair.</p>
   </section>
 
-  <section id="contact" class="contact container">
+  <section id="contact" class="contact container fade-in">
     <h2>Get In Touch</h2>
     <p>Email: danixconcept@gmail.com</p>
     <p><a href="https://instagram.com/danixconcept" target="_blank">Instagram: @danixconcept</a></p>
@@ -59,6 +62,10 @@
     <p>&copy; 2025 Danixconcept</p>
   </footer>
 
-  <script src="scripts.js"></script>
-</body>
-</html>
+  <script>
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      }
