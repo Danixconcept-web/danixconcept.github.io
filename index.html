@@ -1,78 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Daniel Effiong | Graphic Designer</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <h1>Daniel Effiong</h1>
-      <p class="tagline">Graphic Designer</p>
-     
-    </div>
-  </header>
-  <main>
-    <section class="about section">
-      <div class="container">
-        <h2>About Me</h2>
-        <p>
-          Hi! I'm Daniel Effiong, a passionate graphic designer focused on creating visually compelling and meaningful designs. With a keen eye for aesthetics and a love for green and white palettes, I bring ideas to life through creativity and innovation.
-        </p>
-      </div>
-    </section>
-    <section class="projects section">
-      <div class="container">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-          <!-- Sample Project Card -->
-          <div class="project-card">
-            <div class="project-thumb"></div>
-            <h3>Project Title</h3>
-            <p>Short description of the project. Showcase your best works here.</p>
-          </div>
-          <!-- Add more project cards as needed -->
+    <header>
+        <div class="logo">
+            <!-- Placeholder for a logo image -->
+            <h1>MyLogo</h1>
         </div>
-      </div>
-    </section>
-    <section class="skills section">
-      <div class="container">
-        <h2>Skills</h2>
-        <ul class="skills-list">
-          <li>Logo Design</li>
-          <li>Brand Identity</li>
-          <li>Adobe Photoshop</li>
-          <li>Adobe Illustrator</li>
-          <li>Social Media Graphics</li>
-          <li>Print Design</li>
-          <!-- Add more skills if needed -->
-        </ul>
-      </div>
-    </section>
-    <section class="contact section">
-      <div class="container">
-        <h2>Contact</h2>
-        <p>
-          Interested in working together or want to say hello? Reach out to me via <a href="mailto:your.email@example.com">email</a> or connect on <a href="https://www.instagram.com/danixconcept" target="_blank">Instagram</a>.
-        </p>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <div class="container">
-       <div class="social-links">
-        <a href="https://www.instagram.com/danixconcept" target="_blank" aria-label="Instagram">
-          <img src="assets/instagram.svg" alt="Instagram">
-        </a>
-        <a href="https://www.linkedin.com/in/daniel-effiong-588a19269?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn">
-          <img src="assets/linkedin.svg" alt="LinkedIn">
-        </a>
-      </div>
-      <p>&copy; 2025 Daniel Effiong. All rights reserved.</p>
-    </div>
-  </footer>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#gallery">Portfolio Gallery</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="gallery" class="glider-section">
+            <h2>Portfolio Gallery</h2>
+            <p>Showcasing my work and projects.</p>
+            <div class="glider-container">
+                <!-- Placeholder for image glider -->
+                <div class="glider-item">
+                    <img src="placeholder_project_image1.jpg" alt="Project 1 Image">
+                    <h3>Project Title 1</h3>
+                    <p>Brief description of project 1.</p>
+                </div>
+                <div class="glider-item">
+                    <img src="placeholder_project_image2.jpg" alt="Project 2 Image">
+                    <h3>Project Title 2</h3>
+                    <p>Brief description of project 2.</p>
+                </div>
+                <div class="glider-item">
+                    <img src="placeholder_project_image3.jpg" alt="Project 3 Image">
+                    <h3>Project Title 3</h3>
+                    <p>Brief description of project 3.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm [Your Name], a passionate [Your Profession/Title] with experience in [Your Key Skills/Technologies]. I love creating innovative solutions and working on challenging projects. This portfolio is a showcase of my journey and capabilities.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Feel free to reach out for collaborations or inquiries!</p>
+            <form action="#" method="post" class="contact-form">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="user_name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="user_email" required>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="user_message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href="#" title="Facebook">FB</a> <!-- Placeholder for actual icon -->
+            <a href="#" title="Twitter">TW</a> <!-- Placeholder for actual icon -->
+            <a href="#" title="LinkedIn">IN</a> <!-- Placeholder for actual icon -->
+            <a href="#" title="GitHub">GH</a>   <!-- Placeholder for actual icon -->
+        </div>
+        <div class="newsletter">
+            <h3>Join My Newsletter</h3>
+            <form action="#" method="post">
+                <input type="email" name="newsletter_email" placeholder="your.email@example.com" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <p class="copyright">&copy; 2024 [Your Name]. All rights reserved.</p>
+    </footer>
 </body>
 </html>
