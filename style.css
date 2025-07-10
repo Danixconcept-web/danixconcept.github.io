@@ -18,32 +18,83 @@ header {
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
+    overflow: hidden; /* To contain animations like slide-ins */
 }
 
 header .logo h1 {
     margin: 0;
     font-size: 1.8rem;
+    animation: fadeInLogo 1s ease-in-out forwards;
+}
+
+@keyframes fadeInLogo {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 header nav ul {
     padding: 0;
     list-style: none;
     margin: 0;
+    display: flex; /* Align items for animation */
 }
 
 header nav ul li {
-    display: inline;
+    display: inline-block; /* Changed from inline for transform compatibility */
     margin-left: 20px;
+    opacity: 0; /* Start hidden for animation */
+    animation: slideInNavLink 0.5s ease-out forwards;
+}
+
+/* Stagger animation for nav links */
+header nav ul li:nth-child(1) { animation-delay: 0.2s; }
+header nav ul li:nth-child(2) { animation-delay: 0.4s; }
+header nav ul li:nth-child(3) { animation-delay: 0.6s; }
+/* Add more if you have more nav links */
+
+@keyframes slideInNavLink {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 header nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 1rem;
+    position: relative; /* For pseudo-element underline effect */
+    padding-bottom: 5px; /* Space for the underline */
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007bff; /* Or any color you prefer */
+    transition: width 0.3s ease-in-out;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
 }
 
 header nav ul li a:hover {
-    text-decoration: underline;
+    /* text-decoration: underline; */ /* Replaced by pseudo-element */
+    color: #ddd; /* Slight color change on hover */
 }
 
 /* Main Content Styles */
@@ -235,6 +286,51 @@ footer {
     color: #ccc; /* Lighter copyright text */
 }
 
+/* Animation Helper Classes */
+.animated-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animated-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Specific animations for different elements if needed */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in.is-visible {
+    opacity: 1;
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in-left.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in-right.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     header {
@@ -271,5 +367,38 @@ footer {
 
     .newsletter button {
         width: 100%;
+    }
+}
+
+/* Accessibility: Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    /* Turn off transitions and animations */
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important; /* Basically freeze on the first frame */
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important; /* Also disable smooth scrolling */
+    }
+
+    /* Explicitly set animated sections to visible state to avoid them being stuck at opacity 0 */
+    .animated-section,
+    .fade-in,
+    .slide-in-left,
+    .slide-in-right,
+    header .logo h1,
+    header nav ul li {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .glider-item:hover {
+        transform: none !important; /* Disable hover lift */
+    }
+
+    header nav ul li a::after {
+        display: none !important; /* Remove animated underline */
+    }
+    header nav ul li a:hover {
+        text-decoration: underline !important; /* Fallback to simple underline */
     }
 }
